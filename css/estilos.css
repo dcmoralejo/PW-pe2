@@ -1,0 +1,894 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eaf6ff;
+    color: #003366;
+}
+
+
+header {
+    background-color: #003366;
+    padding: 20px;
+    border-bottom: 3px solid #7bd3ff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    color: #e6f7ff;
+}
+
+
+.logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-self: start;
+    font-size: 2em;
+}
+
+
+#logo {
+    width: 150px;
+    height: auto;
+}
+
+.logo-titulo h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-family: 'Cinzel', serif;
+}
+
+header form {
+    justify-self: end;
+    font-family: 'Cinzel', serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px 0;
+}
+
+form input {
+    padding: 6px;
+    margin-bottom: 8px;
+    border: 1px solid #7bbfe6;
+    border-radius: 4px;
+    font-family: 'Cinzel', serif;
+}
+
+input[type="submit"] {
+    background-color: #7bbfe6;
+    color: #003366;
+    border: none;
+    padding: 7px 14px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+input[type="submit"]:hover {
+    background-color: #f1f2f3;
+}
+
+header>a {
+    grid-column: 2;
+    justify-self: end;
+    color: #f0f2f3;
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
+}
+
+nav {
+    width: 160%;
+    margin-top: 15px;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #cceeff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+nav li {
+    flex: 1;
+    border-right: 1px solid #003366;
+}
+
+
+nav li:last-child {
+    border-right: none;
+}
+
+
+nav a {
+    display: flex;
+    width: 100%;
+    height: 60px;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
+}
+
+
+nav a:hover {
+    background-color: #a8d8f0;
+}
+
+
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: center;
+}
+
+#im-isla {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+
+#presentacion {
+    margin-top: 20px;
+}
+
+main h2 {
+    font-size: 4em;
+    margin-bottom: 5px;
+    font-family: 'Cinzel', serif;
+}
+
+main h3 {
+    margin-bottom: 3px;
+    font-family: 'Cinzel', serif;
+}
+
+main p {
+    margin-top: 8px;
+    line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+}
+
+#buscador {
+    background-color: #f2fbff;
+    padding: 20px;
+    margin-top: 25px;
+    border-left: 2px solid #9ad9f8;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    width: 45%;
+    font-size: 0.5em;
+}
+
+.fechas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.fechas legend {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+footer {
+    background-color: #003366;
+    padding: 15px;
+    text-align: center;
+    border-top: 3px solid #b3e5ff;
+    color: #e6f7ff;
+}
+
+footer a {
+    color: #99ddff;
+}
+
+footer a:hover {
+    color: white;
+}
+
+#lista-viajes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    justify-items: center;
+}
+
+#lista-viajes p {
+    line-height: 1.4;
+}
+
+.viaje1 {
+    width: 280px;
+    background-color: #f2fbff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+}
+
+#lista-viajes img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#lista-viajes h3 {
+    margin: 10px 0;
+}
+
+.precio {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #0f4666;
+    background-color: #e6f7ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.viaje2 {
+    width: 280px;
+    background-color: #f2fbff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.viaje3 {
+    width: 280px;
+    background-color: #f2fbff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: right;
+}
+
+#pagina-viajes {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 25px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#menu-continentes {
+    width: 220px;
+    background-color: #cceeff;
+    border-right: 2px solid #003366;
+    min-height: 100%;
+    padding-top: 25px;
+}
+
+#menu-continentes details {
+    width: 100%;
+    border-bottom: 1px solid #003366;
+    margin: 0;
+}
+
+#menu-continentes summary {
+    padding: 0;
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    color: #003366;
+    list-style: none;
+    text-align: center;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+
+#menu-continentes a {
+    display: block;
+    padding: 10px;
+    background-color: #f2fbff;
+    color: #003366;
+    text-decoration: none;
+    text-align: center;
+}
+
+#menu-continentes a:hover {
+    background-color: #a8d8f0;
+}
+
+
+#contenedor-viajes {
+    padding: 25px;
+}
+
+
+#lista-viajes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    justify-items: center;
+}
+
+
+.paginacion {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.imagen-portada {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.contenido-detalle {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.texto-viaje,
+.viajes-relacionados {
+    background-color: #f2fbff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.viajes-relacionados {
+    background-color: #f2fbff;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.viajes-relacionados h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: 'Cinzel', serif;
+}
+
+.viajes-relacionados ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.viajes-relacionados li {
+    margin-bottom: 10px;
+}
+
+
+.viajes-relacionados a {
+    display: block;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #003366;
+    transition: 0.2s;
+}
+
+.viajes-relacionados a:hover {
+    background-color: #a8d8f0;
+    transform: translateX(5px);
+}
+
+.tarjeta-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    width: 280px;
+}
+
+.tarjeta-link:hover article {
+    transform: scale(1.03);
+    transition: 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#detalle-viaje {
+    width: 100%;
+    max-width: none;
+    margin: 30px 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+#pagina-grupo {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 30px 40px;
+}
+
+#lista-viajes-grupo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.viaje-grupo {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f2fbff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.viaje-grupo h3 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.viaje-grupo img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#pagina-ofertas {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 25px;
+}
+
+#leyenda-temporadas {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px 0;
+}
+
+#leyenda-temporadas span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 6px;
+    border: 1px solid #003366;
+}
+
+.baja {
+    background-color: #b7e4c7;
+}
+
+.media {
+    background-color: #fff3b0;
+}
+
+.alta {
+    background-color: #ffadad;
+}
+
+#calendario-ofertas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f2fbff;
+}
+
+caption {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+th,
+td {
+    border: 1px solid #003366;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #cceeff;
+}
+
+.baja-dia {
+    background-color: #b7e4c7;
+}
+
+.media-dia {
+    background-color: #fff3b0;
+}
+
+.alta-dia {
+    background-color: #ffadad;
+}
+
+#ofertas-temporada {
+    margin-top: 35px;
+}
+
+#ofertas-temporada article {
+    background-color: #f2fbff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+#pagina-agencia {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 25px;
+}
+
+#oficinas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.oficina {
+    background-color: #f2fbff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.oficina h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.oficina img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.oficina ul {
+    padding-left: 20px;
+}
+
+
+.oficina summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.oficina summary::-webkit-details-marker {
+    display: none;
+}
+
+#contenedor-sugerencias {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    width: 96%;
+    max-width: none;
+    margin: 30px auto;
+}
+
+#opiniones {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+
+.opinion {
+    background-color: #f2fbff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: none;
+}
+
+.opinion.izquierda {
+    align-self: flex-start;
+    text-align: left;
+    border-left: 5px solid #7bbfe6;
+}
+
+.opinion.derecha {
+    align-self: flex-end;
+    text-align: right;
+    border-right: 5px solid #7bbfe6;
+}
+
+#formulario-sugerencias {
+    background-color: #cceeff;
+    padding: 25px;
+    border-radius: 10px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    text-align: left;
+}
+
+#formulario-sugerencias input,
+#formulario-sugerencias textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#pagina-sugerencias {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 30px 40px;
+}
+
+#pagina-alta {
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#formulario-alta {
+    width: 100%;
+    background-color: #f2fbff;
+    padding: 25px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#formulario-alta fieldset {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid #9ad9f8;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#formulario-alta legend {
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+}
+
+#formulario-alta label {
+    display: block;
+    margin-top: 10px;
+}
+
+#formulario-alta input,
+#formulario-alta select,
+#formulario-alta textarea {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#formulario-alta textarea {
+    resize: none;
+}
+
+#formulario-alta .opciones-formulario label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+#formulario-alta .opciones-formulario input {
+    display: inline;
+    width: auto;
+    max-width: none;
+    margin: 0;
+}
+
+#alta-correcta {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+
+.cabeceraTelefono,
+.menuContinentesTelefono {
+    display: none;
+}
+
+@media (max-width: 480px) {
+
+    .cabeceraOrdenador,
+    .menuContinentesOrdenador {
+        display: none;
+    }
+
+    .cabeceraTelefono {
+        display: block;
+        background-color: #003366;
+        color: #e6f7ff;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .cabeceraTelefono .logo-titulo {
+        flex-direction: column;
+        justify-content: center;
+        font-size: 1em;
+    }
+
+    .cabeceraTelefono #logo {
+        width: 90px;
+    }
+
+    .cabeceraTelefono label {
+        display: block;
+        background-color: #cceeff;
+        color: #003366;
+        padding: 12px;
+        margin-top: 10px;
+        font-weight: bold;
+        font-family: 'Cinzel', serif;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+
+    #menu_desplegable,
+    #login_desplegable,
+    #continentes_desplegable {
+        display: none;
+    }
+
+    .cabeceraTelefono nav ul,
+    .loginTelefono,
+    .continentesMovil {
+        display: none;
+    }
+
+    #menu_desplegable:checked+nav ul {
+        display: block;
+    }
+
+    #login_desplegable:checked+.loginTelefono {
+        display: block;
+    }
+
+    #continentes_desplegable:checked+.continentesMovil {
+        display: block;
+    }
+
+    .cabeceraTelefono nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .cabeceraTelefono nav a,
+    .continentesMovil a {
+        display: block;
+        background-color: #f2fbff;
+        color: #003366;
+        padding: 10px;
+        text-decoration: none;
+        border-bottom: 1px solid #003366;
+    }
+
+    .menuContinentesTelefono {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .menuContinentesTelefono label {
+        display: block;
+        background-color: #cceeff;
+        color: #003366;
+        padding: 12px;
+        font-weight: bold;
+        font-family: 'Cinzel', serif;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+
+    .continentesMovil details {
+        background-color: #f2fbff;
+        border-bottom: 1px solid #003366;
+    }
+
+    .continentesMovil summary {
+        padding: 10px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    main {
+        max-width: none;
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    main h2 {
+        font-size: 2.2em;
+    }
+
+    #pagina-viajes {
+        display: block;
+    }
+
+    #contenedor-viajes {
+        padding: 0;
+    }
+
+    #lista-viajes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .tarjeta-link,
+    .viaje1,
+    .viaje2,
+    .viaje3 {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    #buscador {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #im-isla {
+        width: 100%;
+        height: auto;
+    }
+
+    #calendario-ofertas {
+        display: flex;
+        flex-direction: column;
+    }
+}
