@@ -15,19 +15,19 @@ class Usuario extends DataObject {
     //Busca un usuario por nombreUsuario para el login
     public static function obtenerPorUsuario($nombreUsuario) {
         try {
-            $conexion = self::conectar();
+            $conexion = parent::conectar();
             $consulta = "SELECT * FROM " . TABLA_USUARIOS . " WHERE nombreusuario = :nombreUsuario";
             $sentencia = $conexion->prepare($consulta);
             $sentencia->bindValue(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
             $sentencia->execute();
             $resultado = $sentencia->fetch(PDO::FETCH_ASSOC);
-            self::desconectar($conexion);
+            parent::desconectar($conexion);
             if ($resultado)
                 return new Usuario($resultado);
             else
                 return null;
         } catch (PDOException $e) {
-            self::desconectar($conexion);
+            parent::desconectar($conexion);
             die("Consulta fallida: " . $e->getMessage());
         }
     }
@@ -35,17 +35,17 @@ class Usuario extends DataObject {
     //Registrar un nuevo usuario
     public static function registrar($nombreUsuario, $email, $password) {
         try {
-            $conexion = self::conectar();
+            $conexion = parent::conectar();
             $consulta = "INSERT INTO " . TABLA_USUARIOS . " (nombreUsuario, email, password) VALUES (:nombreUsuario, :email, :password)";
             $sentencia = $conexion->prepare($consulta);
             $sentencia->bindValue(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
             $sentencia->bindValue(':email', $email, PDO::PARAM_STR);
             $sentencia->bindValue(':password', password_hash($password, PASSWORD_DEFAULT), PDO::PARAM_STR);
             $sentencia->execute();
-            self::desconectar($conexion);
+            parent::desconectar($conexion);
             return true;
         } catch (PDOException $e) {
-            self::desconectar($conexion);
+            parent::desconectar($conexion);
             return false;
         }
     }
@@ -53,17 +53,17 @@ class Usuario extends DataObject {
     //Registrar un nuevo usuario como administrador
     public static function registrarAdmin($nombreUsuario, $email, $password) {
         try {
-            $conexion = self::conectar();
+            $conexion = parent::conectar();
             $consulta = "INSERT INTO " . TABLA_USUARIOS . " (nombreUsuario, email, password, tipo) VALUES (:nombreUsuario, :email, :password, 'admin')";
             $sentencia = $conexion->prepare($consulta);
             $sentencia->bindValue(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
             $sentencia->bindValue(':email', $email, PDO::PARAM_STR);
             $sentencia->bindValue(':password', password_hash($password, PASSWORD_DEFAULT), PDO::PARAM_STR);
             $sentencia->execute();
-            self::desconectar($conexion);
+            parent::desconectar($conexion);
             return true;
         } catch (PDOException $e) {
-            self::desconectar($conexion);
+            parent::desconectar($conexion);
             return false;
         }
     }
