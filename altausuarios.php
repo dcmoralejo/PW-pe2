@@ -1,3 +1,26 @@
+<?php
+require_once('configuracion.inc.php');
+require_once('datosObject.class.inc.php');
+require_once('usuario.class.inc.php');
+
+$error = "";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nombreUsuario = $_POST['usuario-alta'];
+    $email = $_POST['correo'];
+    $password = $_POST['clave-alta'];
+
+    if ($nombreUsuario && $email && $password) {
+        $ok = Usuario::registrar($nombreUsuario, $email, $password);
+        if ($ok) {
+            header('Location: altacorrecta.html');
+            exit();
+        } else {
+            $error = "El usuario o correo ya existe. Por favor, elige otro.";
+        }  
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -90,9 +113,13 @@
 
         <h2>Alta de usuarios</h2>
 
+        <?php if ($error): ?>
+            <p style="color:red; font-weight:bold;"><?php echo htmlspecialchars($error); ?></p>
+        <?php endif; ?>
+
         <p>Rellena el siguiente formulario para registrarte en Celta Travel.</p>
 
-        <form action="altacorrecta.html" method="post" id="formulario-alta">
+        <form action="altausuarios.php" method="post" id="formulario-alta">
 
             <fieldset>
                 <legend>Datos personales</legend>
