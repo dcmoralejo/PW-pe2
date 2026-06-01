@@ -13,7 +13,7 @@ abstract class DataObject {
 
     public function devolverValor($campo) {
         if (array_key_exists($campo, $this->datos))
-            return $this->datos[$clave];
+            return $this->datos[$campo];
         else
             die("Campo no encontrado: " . $campo);
     }

@@ -1,3 +1,10 @@
+<?php
+session_start();
+require_once('configuracion.inc.php');
+require_once('datosObject.class.inc.php');
+require_once('usuario.class.inc.php');
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,80 +18,7 @@
 
 <body>
 
-    <header class="cabeceraOrdenador">
-
-        <!-- Logo de la agencia junto con el nombre -->
-        <section class="logo-titulo">
-            <img src="imagenes/logo_CeltaTravel.png" alt="Logo de Celta Travel" id="logo">
-            <h1>Celta Travel</h1>
-        </section>
-
-        <!-- Formulario de login simulado -->
-        <form action="#" method="post">
-            <label for="usuario">Usuario:</label>
-            <input type="text" id="usuario" name="usuario" required>
-
-            <label for="clave">Contraseña:</label>
-            <input type="password" id="clave" name="clave" required>
-
-            <input type="submit" value="Entrar">
-        </form>
-
-        <!-- Enlace al formulario de alta de usuarios -->
-        <a href="altausuarios.html">Alta de usuarios</a>
-
-        <!-- Menú principal de navegación del sitio -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="viajes.html">Viajes</a></li>
-                <li><a href="viajes_grupo.html">Viajes en grupo</a></li>
-                <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="sobre_agencia.html">Sobre nuestra agencia</a></li>
-                <li><a href="sugerencias.html">Sugerencias</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <header class="cabeceraTelefono">
-
-        <section class="logo-titulo">
-            <img src="imagenes/logo_CeltaTravel.png" alt="Logo de Celta Travel" id="logo">
-            <h1>Celta Travel</h1>
-        </section>
-
-        <label for="login_desplegable">Iniciar sesión</label>
-        <input type="checkbox" id="login_desplegable">
-
-        <section class="loginTelefono">
-            <form action="#" method="post">
-                <label for="usuario_movil">Usuario:</label>
-                <input type="text" id="usuario_movil" name="usuario_movil" required>
-
-                <label for="clave_movil">Contraseña:</label>
-                <input type="password" id="clave_movil" name="clave_movil" required>
-
-                <input type="submit" value="Entrar">
-            </form>
-
-            <a href="altausuarios.html">Alta de usuarios</a>
-        </section>
-
-        <label for="menu_desplegable">☰ Menú</label>
-        <input type="checkbox" id="menu_desplegable">
-
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="viajes.html">Viajes</a></li>
-                <li><a href="viajes_grupo.html">Viajes en grupo</a></li>
-                <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="sobre_agencia.html">Sobre nuestra agencia</a></li>
-                <li><a href="sugerencias.html">Sugerencias</a></li>
-            </ul>
-        </nav>
-
-    </header>
+    <?php require_once __DIR__ . '/includes/cabecera.php'; ?>
 
     <main id="pagina-sugerencias">
 
@@ -181,16 +115,7 @@
 
     </main>
 
-    <footer>
-        <!-- Fecha de última modificación (requisito de la práctica) -->
-        <p>Última modificación: 30 de abril de 2026</p>
-
-        <!-- Enlaces obligatorios: contacto y memoria -->
-        <p>
-            <a href="contacto.html">Contacto</a> |
-            <a href="como_se_hizo.pdf">Cómo se hizo</a>
-        </p>
-    </footer>
+    <?php require_once __DIR__ . '/includes/footer.php'; ?>
 
 </body>
 

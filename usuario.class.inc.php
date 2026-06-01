@@ -50,6 +50,24 @@ class Usuario extends DataObject {
         }
     }
 
+    //Registrar un nuevo usuario como administrador
+    public static function registrarAdmin($nombreUsuario, $email, $password) {
+        try {
+            $conexion = self::conectar();
+            $consulta = "INSERT INTO " . TABLA_USUARIOS . " (nombreUsuario, email, password, tipo) VALUES (:nombreUsuario, :email, :password, 'admin')";
+            $sentencia = $conexion->prepare($consulta);
+            $sentencia->bindValue(':nombreUsuario', $nombreUsuario, PDO::PARAM_STR);
+            $sentencia->bindValue(':email', $email, PDO::PARAM_STR);
+            $sentencia->bindValue(':password', password_hash($password, PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $sentencia->execute();
+            self::desconectar($conexion);
+            return true;
+        } catch (PDOException $e) {
+            self::desconectar($conexion);
+            return false;
+        }
+    }
+
     //Verificar contraseña del login
     public function verificarPassword($password) {
         return password_verify($password, $this->datos['password']);

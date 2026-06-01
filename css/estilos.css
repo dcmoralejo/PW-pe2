@@ -739,6 +739,26 @@ th {
     display: none;
 }
 
+.info-usuario {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    color: #e6f7ff;
+}
+
+.info-usuario p {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.info-usuario img {
+    width: 40px;
+    height: auto;
+}
+
 @media (max-width: 480px) {
 
     .cabeceraOrdenador,
@@ -780,6 +800,28 @@ th {
     #login_desplegable,
     #continentes_desplegable {
         display: none;
+    }
+
+    .info-usuario {
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'Cinzel', serif;
+        font-weight: bold;
+        color: #003366;
+        background-color: #cceeff;
+        padding: 4px;
+    }
+
+    .info-usuario p {
+        margin: 0;
+        font-size: 1em;
+    }
+
+    .info-usuario img {
+        width: 20px;
+        height: auto;
     }
 
     .cabeceraTelefono nav ul,
