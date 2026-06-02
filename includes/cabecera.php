@@ -2,14 +2,17 @@
 
         <!-- Logo de la agencia junto con el nombre -->
         <section class="logo-titulo">
-            <img src="imagenes/logo_CeltaTravel.png" alt="Logo de Celta Travel" id="logo">
+            <img src="/imagenes/logo_CeltaTravel.png" alt="Logo de Celta Travel" id="logo">
             <h1>Celta Travel</h1>
         </section>
 
         <?php if (isset($_SESSION['usuario'])): ?>
             <section class="info-usuario">
                 <p><?php echo $_SESSION['usuario']; ?> (<?php echo $_SESSION['tipo']; ?>)</p>
-                <a href="logout.php"><img src="imagenes/logout.png" alt="Cerrar sesión"></a>
+                <?php if ($_SESSION['tipo'] === 'admin'): ?>
+                    <a href="/admin/gestionar_viajes.php" class="link-admin">Gestionar viajes</a>
+                <?php endif; ?>
+                <a href="/logout.php"><img src="/imagenes/logout.png" alt="Cerrar sesión"></a>
             </section>
         <?php else: ?>
             <form action="index.php" method="post">
@@ -31,12 +34,12 @@
         <!-- Menú principal de navegación del sitio -->
         <nav>
             <ul>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="viajes.php">Viajes</a></li>
-                <li><a href="viajes_grupo.php">Viajes en grupo</a></li>
-                <li><a href="ofertas.php">Ofertas</a></li>
-                <li><a href="sobre_agencia.php">Sobre nuestra agencia</a></li>
-                <li><a href="sugerencias.php">Sugerencias</a></li>
+                <li><a href="/index.php">Inicio</a></li>
+                <li><a href="/viajes.php">Viajes</a></li>
+                <li><a href="/viajes_grupo.php">Viajes en grupo</a></li>
+                <li><a href="/ofertas.php">Ofertas</a></li>
+                <li><a href="/sobre_agencia.php">Sobre nuestra agencia</a></li>
+                <li><a href="/sugerencias.php">Sugerencias</a></li>
             </ul>
         </nav>
     </header>
@@ -44,16 +47,18 @@
     <header class="cabeceraTelefono">
 
         <section class="logo-titulo">
-            <img src="imagenes/logo_CeltaTravel.png" alt="Logo de Celta Travel" id="logo">
+            <img src="/imagenes/logo_CeltaTravel.png" alt="Logo de Celta Travel" id="logo">
             <h1>Celta Travel</h1>
         </section>
 
         <?php if (isset($_SESSION['usuario'])): ?>
             <section class="info-usuario">
                 <p><?php echo $_SESSION['usuario']; ?> (<?php echo $_SESSION['tipo']; ?>)</p>
-                <a href="logout.php"><img src="imagenes/logout.png" alt="Cerrar sesión"></a>
+                <?php if ($_SESSION['tipo'] === 'admin'): ?>
+                    <a href="/admin/gestionar_viajes.php" class="link-admin">Gestionar viajes</a>
+                <?php endif; ?>
+                <a href="/logout.php"><img src="/imagenes/logout.png" alt="Cerrar sesión"></a>
             </section>
-        <?php else: ?>
             <?php if ($error): ?>
                     <p style="color:red; font-weight:bold;"><?php echo htmlspecialchars($error); ?></p>
             <?php endif; ?>
@@ -80,12 +85,12 @@
 
         <nav>
             <ul>
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="viajes.php">Viajes</a></li>
-                <li><a href="viajes_grupo.php">Viajes en grupo</a></li>
-                <li><a href="ofertas.php">Ofertas</a></li>
-                <li><a href="sobre_agencia.php">Sobre nuestra agencia</a></li>
-                <li><a href="sugerencias.php">Sugerencias</a></li>
+                <li><a href="/index.php">Inicio</a></li>
+                <li><a href="/viajes.php">Viajes</a></li>
+                <li><a href="/viajes_grupo.php">Viajes en grupo</a></li>
+                <li><a href="/ofertas.php">Ofertas</a></li>
+                <li><a href="/sobre_agencia.php">Sobre nuestra agencia</a></li>
+                <li><a href="/sugerencias.php">Sugerencias</a></li>
             </ul>
         </nav>
 
