@@ -778,6 +778,93 @@ th {
     color: #ffffff;
 }
 
+#contenedor-admin {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 30px;
+    align-items: start;
+}
+
+#panel-nuevo-viaje {
+    background-color: #cceeff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #7bbfe6;
+    position: sticky;
+    top: 30px;
+    align-self: start;
+}
+
+#panel-nuevo-viaje h3 {
+    font-family: 'Cinzel', serif;
+    color: #003366;
+    margin-top: 0;
+}
+
+#panel-nuevo-viaje p {
+    font-size: 0.9em;
+    color: #003366;
+}
+
+#panel-nuevo-viaje a {
+    display: block;
+    background-color: #003366;
+    color: #e6f7ff;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#panel-nuevo-viaje a:hover {
+    background-color: #7bbfe6;
+    color: #003366;
+}
+
+.acciones-admin {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.btn-editar,
+.btn-eliminar {
+    flex: 1;
+    text-align: center;
+    padding: 7px 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.btn-editar {
+    background-color: #cceeff;
+    color: #003366;
+    border: 1px solid #7bbfe6;
+}
+
+.btn-editar:hover {
+    background-color: #a8d8f0;
+}
+
+.btn-eliminar {
+    background-color: #fff0f0;
+    color: #8b0000;
+    border: 1px solid #ffadad;
+}
+
+.btn-eliminar:hover {
+    background-color: #ffadad;
+}
+
 @media (max-width: 480px) {
 
     .cabeceraOrdenador,

@@ -27,7 +27,7 @@ require_once('usuario.class.inc.php');
             Tu registro se ha completado con éxito. Ya puedes consultar nuestros viajes disponibles.
         </p>
 
-        <a href="index.html">Volver al inicio</a>
+        <a href="index.php">Volver al inicio</a>
     </main>
 
     <?php require_once __DIR__ . '/includes/footer.php'; ?>

@@ -59,15 +59,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <section id="buscador">
             <h2>Busca aquí tu próximo viaje</h2>
 
-            <form action="#" method="get">
+            <form action="viajes_buscados.php" method="get">
                 <label for="destino">Destino:</label>
-                <input type="text" id="destino" name="destino" required>
+                <input type="text" id="destino" name="destino">
 
                 <fieldset class="fechas">
                     <legend>Fechas del viaje:</legend>
 
-                    <input type="date" id="fecha_inicio" name="fecha_inicio" required>
-                    <input type="date" id="fecha_fin" name="fecha_fin" required>
+                    <input type="date" id="fecha_inicio" name="fecha_inicio">
+                    <input type="date" id="fecha_fin" name="fecha_fin">
                 </fieldset>
 
                 <input type="submit" value="Buscar">
