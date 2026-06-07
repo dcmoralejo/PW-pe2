@@ -28,6 +28,7 @@ $continentes = Continente::obtenerTodos();
 
 <body>
 
+    <?php $paginaActual = 'viajes'; ?>
     <?php require_once __DIR__ . '/includes/cabecera.php'; ?>
 
 

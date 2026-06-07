@@ -865,11 +865,69 @@ th {
     background-color: #ffadad;
 }
 
+#carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+#carrusel-enlace {
+    text-decoration: none;
+    color: inherit;
+}
+
+#carrusel-enlace:hover article {
+    transform: scale(1.03);
+    transition: 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#carrusel article {
+    width: 420px;
+    background-color: #f2fbff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+#carrusel-imagen {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#flecha-izq,
+#flecha-der {
+    font-size: 8em;
+    cursor: pointer;
+    color: #003366;
+    padding: 10px;
+}
+
+#flecha-izq:hover,
+#flecha-der:hover {
+    color: #7bbfe6;
+}
+
+nav a.nav-activo {
+    background-color: #7bbfe6;
+    color: #003366;
+    font-weight: bold;
+}
+
 @media (max-width: 480px) {
 
     .cabeceraOrdenador,
     .menuContinentesOrdenador {
         display: none;
+    }
+
+    nav a.nav-activo {
+        background-color: #7bbfe6;
+        color: #003366;
+        font-weight: bold;
     }
 
     .cabeceraTelefono {

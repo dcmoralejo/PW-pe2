@@ -18,7 +18,7 @@ require_once('usuario.class.inc.php');
 </head>
 
 <body>
-
+    
     <?php require_once __DIR__ . '/includes/cabecera.php'; ?>
 
     <main id="alta-correcta">

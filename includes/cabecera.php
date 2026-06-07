@@ -1,3 +1,5 @@
+ <?php $paginaActual = $paginaActual ?? ''; ?>
+ 
  <header class="cabeceraOrdenador">
 
         <!-- Logo de la agencia junto con el nombre -->
@@ -34,12 +36,12 @@
         <!-- Menú principal de navegación del sitio -->
         <nav>
             <ul>
-                <li><a href="/index.php">Inicio</a></li>
-                <li><a href="/viajes.php">Viajes</a></li>
-                <li><a href="/viajes_grupo.php">Viajes en grupo</a></li>
-                <li><a href="/ofertas.php">Ofertas</a></li>
-                <li><a href="/sobre_agencia.php">Sobre nuestra agencia</a></li>
-                <li><a href="/sugerencias.php">Sugerencias</a></li>
+                <li><a href="/index.php" <?= ($paginaActual === 'inicio') ? 'class="nav-activo"' : '' ?>>Inicio</a></li>
+                <li><a href="/viajes.php" <?= ($paginaActual === 'viajes') ? 'class="nav-activo"' : '' ?>>Viajes</a></li>
+                <li><a href="/viajes_grupo.php" <?= ($paginaActual === 'grupo') ? 'class="nav-activo"' : '' ?>>Viajes en grupo</a></li>
+                <li><a href="/ofertas.php" <?= ($paginaActual === 'ofertas') ? 'class="nav-activo"' : '' ?>>Ofertas</a></li>
+                <li><a href="/sobre_agencia.php" <?= ($paginaActual === 'agencia') ? 'class="nav-activo"' : '' ?>>Sobre nuestra agencia</a></li>
+                <li><a href="/sugerencias.php" <?= ($paginaActual === 'sugerencias') ? 'class="nav-activo"' : '' ?>>Sugerencias</a></li>
             </ul>
         </nav>
     </header>
@@ -85,13 +87,13 @@
 
         <nav>
             <ul>
-                <li><a href="/index.php">Inicio</a></li>
-                <li><a href="/viajes.php">Viajes</a></li>
-                <li><a href="/viajes_grupo.php">Viajes en grupo</a></li>
-                <li><a href="/ofertas.php">Ofertas</a></li>
-                <li><a href="/sobre_agencia.php">Sobre nuestra agencia</a></li>
-                <li><a href="/sugerencias.php">Sugerencias</a></li>
-            </ul>
+                <li><a href="/index.php" <?= ($paginaActual === 'inicio') ? 'class="nav-activo"' : '' ?>>Inicio</a></li>
+                <li><a href="/viajes.php" <?= ($paginaActual === 'viajes') ? 'class="nav-activo"' : '' ?>>Viajes</a></li>
+                <li><a href="/viajes_grupo.php" <?= ($paginaActual === 'grupo') ? 'class="nav-activo"' : '' ?>>Viajes en grupo</a></li>
+                <li><a href="/ofertas.php" <?= ($paginaActual === 'ofertas') ? 'class="nav-activo"' : '' ?>>Ofertas</a></li>
+                <li><a href="/sobre_agencia.php" <?= ($paginaActual === 'agencia') ? 'class="nav-activo"' : '' ?>>Sobre nuestra agencia</a></li>
+                <li><a href="/sugerencias.php" <?= ($paginaActual === 'sugerencias') ? 'class="nav-activo"' : '' ?>>Sugerencias</a></li>
+                            </ul>
         </nav>
 
     </header>

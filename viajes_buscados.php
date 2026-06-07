@@ -24,7 +24,7 @@ $viajes = Viaje::buscar($destino, $fechaInicio, $fechaFin);
 </head>
 
 <body>
-
+    
     <?php require_once __DIR__ . '/includes/cabecera.php'; ?>
 
     <main id="contenedor-viajes">

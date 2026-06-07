@@ -19,6 +19,7 @@ require_once('usuario.class.inc.php');
 
 <body>
 
+    <?php $paginaActual = 'sugerencias'; ?>
     <?php require_once __DIR__ . '/includes/cabecera.php'; ?>
 
     <main id="pagina-sugerencias">

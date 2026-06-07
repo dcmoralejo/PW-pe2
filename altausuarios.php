@@ -32,10 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="css/estilos.css">
     <script src="/js/validacion.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
 </head>
 
 <body>
-
+    
     <?php require_once __DIR__ . '/includes/cabecera.php'; ?>
 
     <main id="pagina-alta">
@@ -176,6 +179,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     <?php require_once __DIR__ . '/includes/footer.php'; ?>
+
+    <script>
+        flatpickr("#fecha", { locale: "es", dateFormat: "Y-m-d", maxDate: "today" });
+    </script>
 
 </body>
 

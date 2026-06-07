@@ -46,9 +46,10 @@ $totalPaginas = ceil($total / TAMANIO_PAGINA);
                         <p class="precio">Desde <?php echo $viaje->devolverValor('precio'); ?>€</p>
                         <p class="acciones-admin">
                             <a href="formulario_viaje.php?id=<?php echo $viaje->devolverValor('id'); ?>" class="btn-editar">Editar</a>
-                            <a href="gestionar_viajes.php?accion=eliminar&id=<?php echo $viaje->devolverValor('id'); ?>"
-                            class="btn-eliminar"
-                            onclick="return confirm('¿Seguro que quieres eliminar este viaje?')">Eliminar</a>
+                            <a href="#" class="btn-eliminar" 
+                                data-url="gestionar_viajes.php?accion=eliminar&id=<?php echo $viaje->devolverValor('id'); ?>">
+                                Eliminar
+                            </a>
                         </p>
                     </article>
                 <?php endforeach; ?>
@@ -69,6 +70,36 @@ $totalPaginas = ceil($total / TAMANIO_PAGINA);
         </main>
 
         <?php require_once __DIR__ . '/../includes/footer.php'; ?>
+
+        <dialog id="modal-confirmar">
+            <p>¿Seguro que quieres eliminar este viaje?</p>
+            <menu>
+                <button id="modal-confirmar-btn">Eliminar</button>
+                <button id="modal-cancelar-btn">Cancelar</button>
+            </menu>
+        </dialog>
+
+        <script>
+            const modal = document.getElementById('modal-confirmar');
+            const confirmarBtn = document.getElementById('modal-confirmar-btn');
+            const cancelarBtn = document.getElementById('modal-cancelar-btn');
+
+            document.querySelectorAll('.btn-eliminar').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.dataset.url = btn.dataset.url;
+                    modal.showModal();
+                });
+            });
+
+            confirmarBtn.addEventListener('click', function() {
+                window.location.href = modal.dataset.url;
+            });
+
+            cancelarBtn.addEventListener('click', function() {
+                modal.close();
+            });
+        </script>
 
     </body>
 </html>

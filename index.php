@@ -33,11 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Celta Travel</title>
     <link rel="stylesheet" href="css/estilos.css">
     <script src="/js/validacion.js" defer></script>
+    <script src="/js/carrusel.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
 </head>
 
 <body>
 
+    <?php $paginaActual = 'inicio'; ?>
     <?php require_once __DIR__ . '/includes/cabecera.php'; ?>
 
     <main>
@@ -61,14 +66,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Carrusel de viajes -->
         <section id="carrusel">
 
+            <span id="flecha-izq">&#8592;</span>
+
             <a id="carrusel-enlace" href="#">
-                <img id="carrusel-imagen" src="" alt="">
-                <h3 id="carrusel-nombre"></h3>
-                <p id="carrusel-frase"></p>
+                <article class="viaje2">
+                    <img id="carrusel-imagen" src="" alt="">
+                    <h3 id="carrusel-nombre"></h3>
+                    <p id="carrusel-frase"></p>
+                </article>
             </a>
 
-            <img src="/imagenes/flecha-izquierda.png" alt="Anterior" id="flecha-izq">
-            <img src="/imagenes/flecha-derecha.png" alt="Siguiente" id="flecha-der">
+            <span id="flecha-der">&#8594;</span>
 
             <script>
                 const viajes = <?php echo json_encode(array_map(function($v) {
@@ -76,7 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         'id'     => $v->devolverValor('id'),
                         'nombre' => $v->devolverValor('nombre'),
                         'frase'  => $v->devolverValor('frase'),
-                        'imagen' => $v->devolverValor('imagen')
+                        'imagen' => $v->devolverValor('imagen'),
+                        'url'    => 'viaje_detalle.php?id=' . $v->devolverValor('id')
                     ];
                 }, $viajesCarrusel)); ?>;
             </script>
@@ -104,6 +113,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </main>
 
     <?php require_once __DIR__ . '/includes/footer.php'; ?>
+
+    <script>
+        flatpickr("#fecha_inicio", { locale: "es", dateFormat: "Y-m-d" });
+        flatpickr("#fecha_fin",    { locale: "es", dateFormat: "Y-m-d" });
+    </script>
 
 </body>
 
