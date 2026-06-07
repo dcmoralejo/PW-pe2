@@ -13,6 +13,7 @@ require_once('usuario.class.inc.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celta Travel</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="/js/validacion.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
 </head>
 
@@ -95,16 +96,16 @@ require_once('usuario.class.inc.php');
 
                 <h3>Deja tu sugerencia</h3>
 
-                <form action="#" method="post">
+                <form action="#" method="post" id="form-sugerencias">
 
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" required>
+                    <input type="text" id="nombre">
 
                     <label for="viaje">Viaje realizado:</label>
                     <input type="text" id="viaje">
 
                     <label for="mensaje">Experiencia o sugerencia:</label>
-                    <textarea id="mensaje" rows="6" required></textarea>
+                    <textarea id="mensaje" rows="6"></textarea>
 
                     <input type="submit" value="Enviar">
 

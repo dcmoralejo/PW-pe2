@@ -17,10 +17,14 @@ class Viaje extends DataObject {
     );
 
     //Busca n filas de viajes a partir de una fila concreta
-    public static function obtenerViajes($filaInicio, $numeroFilas) {
+    public static function obtenerViajes($filaInicio, $numeroFilas, $soloActivos = false) {
         try {
             $conexion = parent::conectar();
-            $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM " . TABLA_VIAJES . " ORDER BY id LIMIT :filaInicio, :numeroFilas";
+            if ($soloActivos) {
+                $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM " . TABLA_VIAJES . " WHERE activo = 1 ORDER BY id LIMIT :filaInicio, :numeroFilas";
+            } else {
+                $consulta = "SELECT SQL_CALC_FOUND_ROWS * FROM " . TABLA_VIAJES . " ORDER BY id LIMIT :filaInicio, :numeroFilas";
+            }
             $sentencia = $conexion->prepare($consulta);
             $sentencia->bindValue(':filaInicio', $filaInicio, PDO::PARAM_INT);
             $sentencia->bindValue(':numeroFilas', $numeroFilas, PDO::PARAM_INT);
@@ -33,6 +37,7 @@ class Viaje extends DataObject {
             $fila = $sentencia2->fetch();
             parent::desconectar($conexion);
             return array($viajes, $fila["filasTotales"]);
+            
         } catch (PDOException $e) {
             parent::desconectar($conexion);
             die("Consulta fallida: " . $e->getMessage());
@@ -128,7 +133,7 @@ class Viaje extends DataObject {
     public static function obtenerViajesPorPais($idPais) {
         try {
             $conexion = parent::conectar();
-            $consulta = "SELECT * FROM " . TABLA_VIAJES . " WHERE idPais = :idPais";
+            $consulta = "SELECT * FROM " . TABLA_VIAJES . " WHERE activo = 1 AND idPais = :idPais";
             $sentencia = $conexion->prepare($consulta);
             $sentencia->bindValue(':idPais', $idPais, PDO::PARAM_INT);
             $sentencia->execute();
@@ -149,17 +154,17 @@ class Viaje extends DataObject {
         try {
             $conexion = parent::conectar();
             if($destino && $fechaInicio && $fechaFin) {
-                $consulta = "SELECT * FROM " . TABLA_VIAJES . " WHERE nombre LIKE :destino AND fechaInicio <= :fechaInicio AND fechaFin >= :fechaFin";
+                $consulta = "SELECT * FROM " . TABLA_VIAJES . " WHERE activo = 1 AND nombre LIKE :destino AND fechaInicio <= :fechaInicio AND fechaFin >= :fechaFin";
                 $sentencia = $conexion->prepare($consulta);
                 $sentencia->bindValue(':destino', "%$destino%", PDO::PARAM_STR);
                 $sentencia->bindValue(':fechaInicio', $fechaInicio, PDO::PARAM_STR);
                 $sentencia->bindValue(':fechaFin', $fechaFin, PDO::PARAM_STR);
             } elseif($destino) {
-                $consulta = "SELECT * FROM " . TABLA_VIAJES . " WHERE nombre LIKE :destino";
+                $consulta = "SELECT * FROM " . TABLA_VIAJES . " WHERE activo = 1 AND nombre LIKE :destino";
                 $sentencia = $conexion->prepare($consulta);
                 $sentencia->bindValue(':destino', "%$destino%", PDO::PARAM_STR);
             } elseif($fechaInicio && $fechaFin) {
-                $consulta = "SELECT * FROM " . TABLA_VIAJES . " WHERE fechaInicio <= :fechaInicio AND fechaFin >= :fechaFin";
+                $consulta = "SELECT * FROM " . TABLA_VIAJES . " WHERE activo = 1 AND fechaInicio <= :fechaInicio AND fechaFin >= :fechaFin";
                 $sentencia = $conexion->prepare($consulta);
                 $sentencia->bindValue(':fechaInicio', $fechaInicio, PDO::PARAM_STR);
                 $sentencia->bindValue(':fechaFin', $fechaFin, PDO::PARAM_STR);
@@ -177,6 +182,25 @@ class Viaje extends DataObject {
         } catch (PDOException $e) {
             parent::desconectar($conexion);
             return false;
+        }
+    }
+
+    //Busca todos los viajes
+    public static function obtenerTodos() {
+        try {
+            $conexion = parent::conectar();
+            $consulta = "SELECT * FROM " . TABLA_VIAJES . " WHERE activo = 1 ORDER BY id";
+            $sentencia = $conexion->prepare($consulta);
+            $sentencia->execute();
+            $viajes = array();
+            foreach ($sentencia->fetchALL() as $fila) {
+                $viajes[] = new Viaje($fila);
+            }
+            parent::desconectar($conexion);
+            return $viajes;
+        } catch (PDOException $e) {
+            parent::desconectar($conexion);
+            die("Consulta fallida: " . $e->getMessage());
         }
     }
 }

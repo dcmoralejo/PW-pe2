@@ -2,7 +2,9 @@
 require_once('configuracion.inc.php');
 require_once('datosObject.class.inc.php');
 require_once('usuario.class.inc.php');
+require_once('viaje.class.inc.php');
 session_start();
+$viajesCarrusel = Viaje::obtenerTodos();
 $error = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombreUsuario = $_POST['usuario'] ?? $_POST['usuario_movil'] ?? '';
@@ -30,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celta Travel</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="/js/validacion.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
 </head>
 
@@ -55,11 +58,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Imagen principal para captar la atención del usuario -->
         <img src="imagenes/islas-cies-vigo.jpg" alt="Paisaje turístico" id="im-isla">
 
+        <!-- Carrusel de viajes -->
+        <section id="carrusel">
+
+            <a id="carrusel-enlace" href="#">
+                <img id="carrusel-imagen" src="" alt="">
+                <h3 id="carrusel-nombre"></h3>
+                <p id="carrusel-frase"></p>
+            </a>
+
+            <img src="/imagenes/flecha-izquierda.png" alt="Anterior" id="flecha-izq">
+            <img src="/imagenes/flecha-derecha.png" alt="Siguiente" id="flecha-der">
+
+            <script>
+                const viajes = <?php echo json_encode(array_map(function($v) {
+                    return [
+                        'id'     => $v->devolverValor('id'),
+                        'nombre' => $v->devolverValor('nombre'),
+                        'frase'  => $v->devolverValor('frase'),
+                        'imagen' => $v->devolverValor('imagen')
+                    ];
+                }, $viajesCarrusel)); ?>;
+            </script>
+
+        </section>
+
         <!-- Buscador de viajes simulado -->
         <section id="buscador">
             <h2>Busca aquí tu próximo viaje</h2>
 
-            <form action="viajes_buscados.php" method="get">
+            <form action="viajes_buscados.php" method="get" id="form-buscador">
                 <label for="destino">Destino:</label>
                 <input type="text" id="destino" name="destino">
 

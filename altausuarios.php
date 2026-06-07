@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celta Travel</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="/js/validacion.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
 </head>
 
@@ -53,40 +54,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <legend>Datos personales</legend>
 
                 <label for="nombre"><strong>Nombre:</strong></label>
-                <input type="text" id="nombre" name="nombre" maxlength="30" placeholder="Introduce tu nombre" required
+                <input type="text" id="nombre" name="nombre" maxlength="30" placeholder="Introduce tu nombre"
                     autofocus>
 
                 <label for="apellidos"><strong>Apellidos:</strong></label>
-                <input type="text" id="apellidos" name="apellidos" placeholder="Introduce tus apellidos" required>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Introduce tus apellidos">
 
                 <label for="dni"><strong>DNI:</strong></label>
-                <input type="text" id="dni" name="dni" pattern="[0-9]{8}[A-Za-z]" required>
+                <input type="text" id="dni" name="dni">
 
                 <label for="fecha"><strong>Fecha de nacimiento:</strong></label>
-                <input type="date" id="fecha" name="fecha" required>
+                <input type="text" id="fecha" name="fecha">
 
                 <label for="telefono"><strong>Teléfono:</strong></label>
-                <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" placeholder="600123456" required>
+                <input type="text" id="telefono" name="telefono" placeholder="600123456">
 
                 <label for="correo"><strong>Correo electrónico:</strong></label>
-                <input type="email" id="correo" name="correo" required>
+                <input type="text" id="correo" name="correo">
             </fieldset>
 
             <fieldset>
                 <legend>Datos de acceso</legend>
 
                 <label for="usuario-alta"><strong>Nombre de usuario:</strong></label>
-                <input type="text" id="usuario-alta" name="usuario-alta" required>
+                <input type="text" id="usuario-alta" name="usuario-alta">
 
                 <label for="clave-alta"><strong>Contraseña:</strong></label>
-                <input type="password" id="clave-alta" name="clave-alta" required>
+                <input type="password" id="clave-alta" name="clave-alta">
             </fieldset>
 
             <fieldset>
                 <legend>Preferencias de viaje</legend>
 
                 <label for="destino"><strong>Destino favorito:</strong></label>
-                <input type="text" id="destino" name="destino" list="destinos" required>
+                <input type="text" id="destino" name="destino" list="destinos">
 
                 <datalist id="destinos">
                     <option value="México">
@@ -113,14 +114,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 </datalist>
 
-                <label for="busqueda"><strong>Busca un destino:</strong></label>
-                <input type="search" id="busqueda" name="busqueda" placeholder="Ej: Japón, Cancún..." required>
-
-                <label for="hora-contacto"><strong>Hora preferida de contacto:</strong></label>
-                <input type="time" id="hora-contacto" name="hora-contacto" required>
-
                 <label for="tipo-viaje"><strong>Tipo de viaje preferido:</strong></label>
-                <select id="tipo-viaje" name="tipo-viaje" required>
+                <select id="tipo-viaje" name="tipo-viaje">
                     <option value="">Selecciona una opción</option>
                     <option value="playa">Playa</option>
                     <option value="cultural">Cultural</option>
@@ -128,15 +123,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="aventura">Aventura</option>
                 </select>
 
-                <label for="web"><strong>Página web que usa para informarse sobre los viajes (si usa
-                        alguna):</strong></label>
-                <input type="url" id="web" name="web" placeholder="https://ejemplo.com" required>
-
                 <p><strong>¿Quieres recibir ofertas?</strong></p>
 
                 <section class="opciones-formulario">
                     <label>
-                        <input type="radio" name="ofertas" value="si" required>
+                        <input type="radio" name="ofertas" value="si">
                         Sí
                     </label>
 
@@ -166,20 +157,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </section>
 
                 <label for="presupuesto"><strong>Presupuesto aproximado:</strong></label>
-                <input type="number" id="presupuesto" name="presupuesto" min="300" max="5000" step="50" required>
-
-                <label for="satisfaccion"><strong>Interés en viajar con nosotros:</strong></label>
-                <input type="range" id="satisfaccion" name="satisfaccion" min="1" max="10" required>
-
-                <label for="color"><strong>Color identificativo de tu perfil:</strong></label>
-                <input type="color" id="color" name="color" required>
+                <input type="text" id="presupuesto" name="presupuesto">
             </fieldset>
 
             <fieldset>
                 <legend>Comentarios</legend>
 
                 <label for="comentarios">Cuéntanos qué tipo de viaje buscas:</label>
-                <textarea id="comentarios" name="comentarios" rows="5" required></textarea>
+                <textarea id="comentarios" name="comentarios" rows="5"></textarea>
             </fieldset>
 
             <input type="submit" value="Enviar registro">

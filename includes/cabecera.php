@@ -15,16 +15,16 @@
                 <a href="/logout.php"><img src="/imagenes/logout.png" alt="Cerrar sesión"></a>
             </section>
         <?php else: ?>
-            <form action="index.php" method="post">
+            <form action="index.php" method="post" id="form-login">
                 <?php if ($error): ?>
                     <p style="color:red; font-weight:bold;"><?php echo htmlspecialchars($error); ?></p>
                 <?php endif; ?>
 
                 <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" required>
+                <input type="text" id="usuario" name="usuario">
 
                 <label for="clave">Contraseña:</label>
-                <input type="password" id="clave" name="clave" required>
+                <input type="password" id="clave" name="clave">
 
                 <input type="submit" value="Entrar">
             </form>
@@ -66,12 +66,12 @@
             <input type="checkbox" id="login_desplegable">
 
             <section class="loginTelefono">
-                <form action="index.php" method="post">
+                <form action="index.php" method="post" id="form-login">
                     <label for="usuario_movil">Usuario:</label>
-                    <input type="text" id="usuario_movil" name="usuario_movil" required>
+                    <input type="text" id="usuario" name="usuario">
 
                     <label for="clave_movil">Contraseña:</label>
-                    <input type="password" id="clave_movil" name="clave_movil" required>
+                    <input type="password" id="clave" name="clave">
 
                     <input type="submit" value="Entrar">
                 </form>

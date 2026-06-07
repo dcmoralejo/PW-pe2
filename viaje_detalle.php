@@ -29,6 +29,7 @@ $relacionadosFiltrados = array_filter($relacionados, function($r) use ($viaje) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celta Travel</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="/js/validacion.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
 </head>
 

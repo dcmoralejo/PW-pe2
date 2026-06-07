@@ -8,7 +8,7 @@ require_once('continente.class.inc.php');
 
 $pagina =$_GET['pagina'] ?? 1;
 $filaInicio = ($pagina - 1) * TAMANIO_PAGINA;
-list($viajes, $total) = Viaje::obtenerViajes($filaInicio, TAMANIO_PAGINA);
+list($viajes, $total) = Viaje::obtenerViajes($filaInicio, TAMANIO_PAGINA, true);
 $totalPaginas = ceil($total / TAMANIO_PAGINA);
 
 $continentes = Continente::obtenerTodos();
@@ -22,6 +22,7 @@ $continentes = Continente::obtenerTodos();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Celta Travel</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="/js/validacion.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
 </head>
 
